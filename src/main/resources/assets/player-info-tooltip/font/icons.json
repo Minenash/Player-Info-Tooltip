@@ -2,37 +2,16 @@
   "providers": [
     {
       "type": "bitmap",
-      "file": "player-info-tooltip:font/health.png",
+      "file": "player-info-tooltip:font/icons.png",
       "ascent": 8,
       "height": 9,
-      "chars": [ "\uEFF1" ]
-    },
-    {
-      "type": "bitmap",
-      "file": "player-info-tooltip:font/armor.png",
-      "ascent": 8,
-      "height": 9,
-      "chars": [ "\uEFF2" ]
-    },
-    {
-      "type": "bitmap",
-      "file": "player-info-tooltip:font/hunger.png",
-      "ascent": 8,
-      "height": 9,
-      "chars": [ "\uEFF3" ]
-    },
-    {
-      "type": "bitmap",
-      "file": "player-info-tooltip:font/saturation.png",
-      "ascent": 8,
-      "height": 9,
-      "chars": [ "\uEFF4" ]
+      "chars": [ "\uEFF1\uEFF2\uEFF3\uEFF4\uEFF5\uEFF6\uEFF7" ]
     },
     {
       "type": "space",
       "advances": {
         " ": 4,
-        "\uEFF5": 6
+        "\uEFFA": 6
       }
     }
   ]
