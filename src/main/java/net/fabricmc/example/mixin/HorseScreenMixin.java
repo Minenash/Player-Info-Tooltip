@@ -1,6 +1,7 @@
 package net.fabricmc.example.mixin;
 
 import net.fabricmc.example.PlayerInfoTooltip;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.screen.ingame.HorseScreen;
 import net.minecraft.client.util.math.MatrixStack;
@@ -21,9 +22,9 @@ public abstract class HorseScreenMixin extends HandledScreen<HorseScreenHandler>
     }
 
     @Inject(method = "render", at = @At("TAIL"))
-    private void addPlayerTooltip(MatrixStack matrices, int mouseX, int mouseY, float delta, CallbackInfo ci) {
+    private void addPlayerTooltip(DrawContext context, int mouseX, int mouseY, float delta, CallbackInfo ci) {
         if (mouseX >= x+26 && mouseX <= x+26+52 && mouseY >= y+18 && mouseY <= y+18+52)
-            renderTooltip(matrices, PlayerInfoTooltip.tooltip(client.player), mouseX, mouseY);
+            context.drawTooltip(this.client.textRenderer, PlayerInfoTooltip.tooltip(this.client.player), mouseX, mouseY);
     }
 
 }
